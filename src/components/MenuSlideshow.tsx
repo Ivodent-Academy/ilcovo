@@ -1,26 +1,25 @@
 
 import { useState, useEffect } from 'react';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const menuItems = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1559847844-5315695dadae?q=80&w=2236",
-    title: "Captain's Feast",
-    description: "Premium seafood selection including lobster, crab, and prawns, served with our signature butter sauce."
+    image: "https://images.unsplash.com/photo-1597692493647-25bd4240a3f2?q=80&w=1303&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Gusti Freschi & Tradizionali",
+    description: "Un’accurata selezione di piatti che unisce la freschezza degli ingredienti di stagione ai sapori autentici della cucina tradizionale."
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=2069",
-    title: "Blackbeard's Steak",
-    description: "Perfectly aged ribeye, grilled to your preference, with herb-infused butter and truffle mashed potatoes."
+    image: "https://images.unsplash.com/photo-1635527726426-cc74da84703e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "l'aperitivo della serata",
+    description: "Proposte raffinate per iniziare la serata con gusto, accompagnate da vini selezionati e cocktail preparati con cura."
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1602785115306-d678195891b5?q=80&w=2070",
-    title: "The Siren's Catch",
-    description: "Fresh catch of the day, prepared with exotic herbs and served with seasonal vegetables."
+    image: "https://images.unsplash.com/photo-1524686788093-aa1f9c0f7c4f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "caffè & ponce",
+    description: "Una chiusura all’insegna della tradizione: caffè di qualità e il classico ponce per un momento di autentico piacere."
   }
 ];
 
@@ -52,11 +51,11 @@ const MenuSlideshow = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-serif font-bold text-white">
-            Our Signature Menu
+            Il Nostro Menù d’Autore
           </h2>
           <div className="h-1 w-24 bg-pirate-burgundy mx-auto mt-4 mb-8"></div>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Discover our most treasured creations, crafted with passion and the finest ingredients
+           Scoprite le nostre creazioni più preziose, realizzate con passione e ingredienti di altissima qualità.
           </p>
         </div>
         
@@ -78,9 +77,6 @@ const MenuSlideshow = () => {
                   <div className="absolute bottom-0 left-0 right-0 p-8 z-20 text-white">
                     <h3 className="font-serif text-3xl font-bold mb-4">{item.title}</h3>
                     <p className="text-white/80 mb-6 max-w-lg">{item.description}</p>
-                    <Button className="bg-pirate-burgundy hover:bg-pirate-burgundy/90 text-white">
-                      View Full Menu
-                    </Button>
                   </div>
                 </div>
               ))}

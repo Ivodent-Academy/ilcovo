@@ -11,7 +11,7 @@ const VimeoEmbed = () => {
           </h2>
           <div className="h-1 w-24 bg-pirate-burgundy mx-auto mt-4 mb-8"></div>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Immergiti nell'atmosfera unica del Rifugio del Pirata Cremisi
+            Immergiti nell'atmosfera unica del "Il Covo"
           </p>
         </div>
         

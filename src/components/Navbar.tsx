@@ -1,12 +1,11 @@
-
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
+// Button import is removed as it's no longer used
 import { Facebook, Instagram } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // Removed isMobileMenuOpen state
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,32 +15,33 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  // Removed toggleMobileMenu function
 
   return (
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 shadow-md py-2"
-          : "bg-transparent py-4"
+          ? "bg-white/95 shadow-md py-2" // Adjusted padding for scrolled state if needed
+          : "bg-transparent py-4"        // Adjusted padding for initial state if needed
       )}
     >
       <div className="container mx-auto px-4 flex justify-between items-center">
+        {/* Logo on the left */}
         <a href="#" className="flex items-center">
           <div className={cn(
             "font-serif font-bold text-2xl",
             isScrolled ? "text-pirate-burgundy" : "text-white"
           )}>
-            Rifugio del Pirata Cremisi
+            Il Covo
           </div>
         </a>
 
+        {/* Social Media Icons on the right */}
         <div className="flex items-center space-x-4">
-          {/* Social Media Icons */}
-          <a 
-            href="https://facebook.com" 
-            target="_blank" 
+          <a
+            href="https://www.facebook.com/Ilcovolivorno"
+            target="_blank"
             rel="noopener noreferrer"
             className={cn(
               "transition-colors duration-300 hover:text-pirate-burgundy",
@@ -50,9 +50,9 @@ const Navbar = () => {
           >
             <Facebook size={20} />
           </a>
-          <a 
-            href="https://instagram.com" 
-            target="_blank" 
+          <a
+            href="https://www.instagram.com/ilcovolivorno/"
+            target="_blank"
             rel="noopener noreferrer"
             className={cn(
               "transition-colors duration-300 hover:text-pirate-burgundy",
@@ -61,58 +61,12 @@ const Navbar = () => {
           >
             <Instagram size={20} />
           </a>
-          
-          <Button 
-            className="bg-pirate-burgundy text-white hover:bg-pirate-burgundy/90 ml-2"
-          >
-            Prenota Ora
-          </Button>
         </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          className={cn(
-            "lg:hidden focus:outline-none",
-            isScrolled ? "text-pirate-burgundy" : "text-white"
-          )}
-          onClick={toggleMobileMenu}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
-          </svg>
-        </button>
+        {/* Removed Mobile Menu Button */}
       </div>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 p-4 shadow-md absolute w-full">
-          <div className="flex flex-col space-y-4">
-            <Button 
-              className="bg-pirate-burgundy text-white hover:bg-pirate-burgundy/90 w-full"
-            >
-              Prenota Ora
-            </Button>
-            <div className="flex justify-center space-x-6">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-pirate-teal hover:text-pirate-burgundy"
-              >
-                <Facebook size={20} />
-              </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-pirate-teal hover:text-pirate-burgundy"
-              >
-                <Instagram size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Removed Mobile Menu Dropdown */}
     </nav>
   );
 };

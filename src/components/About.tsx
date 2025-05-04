@@ -1,41 +1,46 @@
+import React from 'react'; // Make sure React is imported if not already
 
 const About = () => {
   return (
     <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
-          <div className="lg:w-1/2">
+        {/* The main flex container centers its items vertically on large screens (items-center) */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-12">
+          {/*
+            1. Added `text-center` here: This centers the inline content (text)
+               within this div (<h1>, <p>).
+            2. Added `flex flex-col items-center` to ensure the block-level
+               quote div is also centered within this container.
+          */}
+          <div className="lg:w-1/2 flex flex-col items-center text-center">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-pirate-teal">
-              A Legendary Dining Experience
+              Nel cuore di Livorno
             </h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Crimson Pirate Haven is more than just a restaurant; it's a journey into the golden age of piracy reimagined with modern elegance. Our establishment combines rich maritime history with contemporary culinary artistry to create an unforgettable dining experience.
+              Dopo 60 anni senza vedere la luce del sole, torna a vivere un pezzo di storia della città di Livorno. Un locale dove si respirerà la tradizione livornese della cucina, in uno degli scorci più suggestivi di Livorno, ovvero sotto il ponte che introduce alla Fortezza Nuova, esattamente dove i battelli dei turisti partono per il giro nei fossi.
             </p>
-            <p className="text-gray-700 mb-6 leading-relaxed">
-              Each dish tells a story of adventure and discovery, crafted by our award-winning chefs using only the finest ingredients sourced from around the world. From delicate seafood preparations to robust meat dishes, our menu celebrates the spirit of exploration.
-            </p>
-            <div className="flex items-center space-x-4">
+            {/*
+              3. Added `justify-center` to the inner flex container for the quote
+                 to center the horizontal rule and the text relative to each other.
+            */}
+            <div className="flex items-center justify-center space-x-4">
               <div className="w-12 h-1 bg-pirate-burgundy"></div>
               <p className="font-serif text-xl italic text-pirate-burgundy">
-                "The finest treasure is found on our plates"
+               "Il tesoro più prezioso si trova nei nostri piatti"
               </p>
             </div>
           </div>
-          
-          <div className="lg:w-1/2 relative">
-            <div className="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
-              <iframe
-                src="https://player.vimeo.com/video/435010389?h=ba503835e7&title=0&byline=0&portrait=0"
-                className="w-full h-full"
-                frameBorder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowFullScreen
-                title="Crimson Pirate Haven Restaurant"
-              ></iframe>
-            </div>
-            <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-pirate-burgundy rounded-full -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-20 h-20 bg-pirate-teal rounded-full -z-10"></div>
+
+          {/* Optional: If you had another column (e.g., an image) in the lg:flex-row,
+              it would go here as another lg:w-1/2 div. Added justify-center
+              to the parent flex container to center the content block itself
+              when it's only one column */}
+          {/* Example placeholder for a second column if needed later:
+          <div className="lg:w-1/2">
+             <img src="/path/to/your/image.jpg" alt="About us image" className="rounded-lg shadow-md"/>
           </div>
+          */}
+
         </div>
       </div>
     </section>
