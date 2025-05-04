@@ -6,6 +6,7 @@ import MenuSlideshow from "@/components/MenuSlideshow";
 import FacebookFeed from "@/components/FacebookFeed";
 import Location from "@/components/Location";
 import Footer from "@/components/Footer";
+import VimeoEmbed from "@/components/VimeoEmbed";
 
 const Index = () => {
   return (
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <Hero />
       <About />
+      <VimeoEmbed />
       <MenuSlideshow />
       <FacebookFeed />
       <Location />

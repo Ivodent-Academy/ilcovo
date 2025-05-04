@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
+import { Facebook, Instagram } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,28 +33,39 @@ const Navbar = () => {
             "font-serif font-bold text-2xl",
             isScrolled ? "text-pirate-burgundy" : "text-white"
           )}>
-            Crimson Pirate Haven
+            Rifugio del Pirata Cremisi
           </div>
         </a>
 
-        {/* Desktop Menu */}
-        <div className="hidden lg:flex space-x-8">
-          {["Home", "Menu", "Gallery", "Location", "Reservations"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className={cn(
-                "font-serif transition-colors duration-300 hover:text-pirate-burgundy",
-                isScrolled ? "text-pirate-teal" : "text-white"
-              )}
-            >
-              {item}
-            </a>
-          ))}
-          <Button 
-            className="bg-pirate-burgundy text-white hover:bg-pirate-burgundy/90"
+        <div className="flex items-center space-x-4">
+          {/* Social Media Icons */}
+          <a 
+            href="https://facebook.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={cn(
+              "transition-colors duration-300 hover:text-pirate-burgundy",
+              isScrolled ? "text-pirate-teal" : "text-white"
+            )}
           >
-            Book Now
+            <Facebook size={20} />
+          </a>
+          <a 
+            href="https://instagram.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className={cn(
+              "transition-colors duration-300 hover:text-pirate-burgundy",
+              isScrolled ? "text-pirate-teal" : "text-white"
+            )}
+          >
+            <Instagram size={20} />
+          </a>
+          
+          <Button 
+            className="bg-pirate-burgundy text-white hover:bg-pirate-burgundy/90 ml-2"
+          >
+            Prenota Ora
           </Button>
         </div>
 
@@ -75,21 +87,29 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="lg:hidden bg-white/95 p-4 shadow-md absolute w-full">
           <div className="flex flex-col space-y-4">
-            {["Home", "Menu", "Gallery", "Location", "Reservations"].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase()}`}
-                className="text-pirate-teal hover:text-pirate-burgundy font-serif"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
             <Button 
               className="bg-pirate-burgundy text-white hover:bg-pirate-burgundy/90 w-full"
             >
-              Book Now
+              Prenota Ora
             </Button>
+            <div className="flex justify-center space-x-6">
+              <a 
+                href="https://facebook.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-pirate-teal hover:text-pirate-burgundy"
+              >
+                <Facebook size={20} />
+              </a>
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-pirate-teal hover:text-pirate-burgundy"
+              >
+                <Instagram size={20} />
+              </a>
+            </div>
           </div>
         </div>
       )}

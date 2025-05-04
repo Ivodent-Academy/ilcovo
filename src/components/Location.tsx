@@ -3,7 +3,8 @@ import { useEffect } from 'react';
 
 declare global {
   interface Window {
-    initMap: () => void;
+    google?: any;
+    initMap?: () => void;
   }
 }
 
@@ -20,9 +21,9 @@ const Location = () => {
         const mapElement = document.getElementById('map') as HTMLElement;
         if (!mapElement) return;
         
-        const location = { lat: 25.761681, lng: -80.191788 }; // Example coordinates - Miami
+        const location = { lat: 41.902782, lng: 12.496366 }; // Rome, Italy coordinates
         
-        const map = new google.maps.Map(mapElement, {
+        const map = new window.google.maps.Map(mapElement, {
           zoom: 15,
           center: location,
           styles: [
@@ -49,17 +50,17 @@ const Location = () => {
           ]
         });
         
-        const marker = new google.maps.Marker({
+        const marker = new window.google.maps.Marker({
           position: location,
           map: map,
-          title: "Crimson Pirate Haven"
+          title: "Rifugio del Pirata Cremisi"
         });
         
-        const infoWindow = new google.maps.InfoWindow({
+        const infoWindow = new window.google.maps.InfoWindow({
           content: `
             <div class="p-2">
-              <h3 class="font-bold">Crimson Pirate Haven</h3>
-              <p>123 Ocean Drive, Miami, FL</p>
+              <h3 class="font-bold">Rifugio del Pirata Cremisi</h3>
+              <p>Via dei Fori Imperiali 123, Roma, Italia</p>
             </div>
           `
         });
@@ -94,36 +95,36 @@ const Location = () => {
             <div className="bg-white rounded-lg shadow-xl overflow-hidden h-96">
               <div id="map" className="w-full h-full"></div>
               <div className="p-4 text-center text-sm text-gray-500">
-                Map loading... If you don't see a map above, please ensure location services are enabled
+                Caricamento mappa... Se non vedi una mappa sopra, assicurati che i servizi di localizzazione siano abilitati
               </div>
             </div>
           </div>
           
           <div className="lg:w-1/2 order-1 lg:order-2">
             <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6 text-pirate-teal">
-              Find Your Way to Adventure
+              Trova la Via per l'Avventura
             </h2>
             <p className="text-gray-700 mb-6 leading-relaxed">
-              Located in the heart of the city, our restaurant is easily accessible by both public transportation and private vehicles. Come discover the hidden treasure that awaits you!
+              Situato nel cuore della città, il nostro ristorante è facilmente accessibile sia con i mezzi pubblici che con mezzi privati. Vieni a scoprire il tesoro nascosto che ti aspetta!
             </p>
             
             <div className="bg-white p-6 rounded-lg shadow-lg mb-8 border-l-4 border-pirate-burgundy">
-              <h3 className="font-serif text-xl font-bold mb-2 text-pirate-burgundy">Address</h3>
-              <p className="text-gray-700">123 Ocean Drive</p>
-              <p className="text-gray-700">Miami, FL 33139</p>
+              <h3 className="font-serif text-xl font-bold mb-2 text-pirate-burgundy">Indirizzo</h3>
+              <p className="text-gray-700">Via dei Fori Imperiali 123</p>
+              <p className="text-gray-700">Roma, Italia</p>
             </div>
             
             <div className="bg-white p-6 rounded-lg shadow-lg border-l-4 border-pirate-burgundy">
-              <h3 className="font-serif text-xl font-bold mb-2 text-pirate-burgundy">Hours</h3>
+              <h3 className="font-serif text-xl font-bold mb-2 text-pirate-burgundy">Orari</h3>
               <div className="grid grid-cols-2 gap-2">
-                <p className="text-gray-700">Monday - Thursday:</p>
-                <p className="text-gray-700">5:00 PM - 10:00 PM</p>
+                <p className="text-gray-700">Lunedì - Giovedì:</p>
+                <p className="text-gray-700">17:00 - 22:00</p>
                 
-                <p className="text-gray-700">Friday - Saturday:</p>
-                <p className="text-gray-700">4:00 PM - 12:00 AM</p>
+                <p className="text-gray-700">Venerdì - Sabato:</p>
+                <p className="text-gray-700">16:00 - 24:00</p>
                 
-                <p className="text-gray-700">Sunday:</p>
-                <p className="text-gray-700">4:00 PM - 9:00 PM</p>
+                <p className="text-gray-700">Domenica:</p>
+                <p className="text-gray-700">16:00 - 21:00</p>
               </div>
             </div>
           </div>
