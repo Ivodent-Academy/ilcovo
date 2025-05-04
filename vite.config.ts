@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  base: '/ilcovo/', // Replace 'il-covo-livorno' with your actual repository name
   plugins: [
     react(),
     mode === 'development' &&
