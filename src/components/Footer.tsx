@@ -7,7 +7,7 @@ const Footer = () => {
   const restaurantName = "Il Covo";
   const facebookUrl = "https://www.facebook.com/Ilcovolivorno"; // From previous context
   const instagramUrl = "https://www.instagram.com/ilcovolivorno/";
-  const phone = "+39 351 064 7362";
+  const phone = "+39 351 772 6492";
   const email = "ilcovolivorno@gmail.com";
   const addressLine1 = "Scali delle Pietre, 8";
   const addressLine2 = "57125 Livorno LI, Italia";

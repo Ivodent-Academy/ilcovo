@@ -16,7 +16,6 @@ const Index = () => {
       <About />
       <VimeoEmbed />
       <MenuSlideshow />
-      <FacebookFeed />
       <Location />
       <Footer />
     </div>
